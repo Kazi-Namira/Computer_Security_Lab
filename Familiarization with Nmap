@@ -1,0 +1,73 @@
+mkdir ~/Lab2_Nmap
+
+cd ~/Lab2_Nmap
+
+Scan 1 — Single Target
+nmap scanme.nmap.org > 01_single_target.txt
+cat 01_single_target.txt
+
+Scan 2 — Multiple Targets
+nmap scanme.nmap.org 127.0.0.1 > 02_multiple_targets.txt
+cat 02_multiple_targets.txt
+
+Scan 3 — Subnet
+nmap 192.168.0.0/24 > 03_subnet.txt
+cat 03_subnet.txt
+
+Scan 4 — Specific Ports
+nmap -p 80,443 scanme.nmap.org > 04_specific_ports.txt
+cat 04_specific_ports.txt
+
+Scan 5 — Port Range
+nmap -p 1-1000 scanme.nmap.org > 05_port_range.txt
+cat 05_port_range.txt
+
+Scan 6 — All Ports
+nmap -p- scanme.nmap.org > 06_all_ports.txt
+cat 06_all_ports.txt
+
+Scan 7 — Top Ports
+nmap --top-ports 100 scanme.nmap.org > 07_top_ports.txt
+cat 07_top_ports.txt
+
+Scan 8 — Service Version Detection
+nmap -sV scanme.nmap.org > 08_service_version.txt
+cat 08_service_version.txt
+
+Scan 9 — Aggressive Scan
+nmap -A scanme.nmap.org > 09_aggressive.txt
+cat 09_aggressive.txt
+
+Scan 10 — Lightweight Version Detection
+nmap -sV --version-light scanme.nmap.org > 10_version_light.txt
+cat 10_version_light.txt
+
+Scan 11 — OS Detection
+sudo nmap -O scanme.nmap.org > 11_os_detection.txt
+cat 11_os_detection.txt
+
+Scan 12 — Default NSE Script
+nmap -sC scanme.nmap.org > 12_nse_script.txt
+cat 12_nse_script.txt
+
+Scan 13 — Fast Scan
+nmap -T4 scanme.nmap.org > 13_fast_scan.txt
+cat 13_fast_scan.txt
+
+Scan 14 — Host Discovery
+nmap -sn scanme.nmap.org > 14_host_discovery.txt
+cat 14_host_discovery.txt
+
+Scan 15 — Traceroute
+nmap --traceroute scanme.nmap.org > 15_traceroute.txt
+cat 15_traceroute.txt
+
+Scan 16 — Save Scan Results
+nmap -oN 16_saved_results.txt scanme.nmap.org
+cat 16_saved_results.txt
+
+ls -la
+
+cd ~/Lab2_Nmap
+
+ls
